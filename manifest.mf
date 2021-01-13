@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+AutoUpdate-Show-In-Client: true
+OpenIDE-Module: com.vitexsoftware.phpswitch
+OpenIDE-Module-Install: com/vitexsoftware/phpswitch/PHPSwitch.class
+OpenIDE-Module-Localizing-Bundle: com/vitexsoftware/phpswitch/Bundle.properties
+OpenIDE-Module-Layer: com/vitexsoftware/phpswitch/layer.xml
+OpenIDE-Module-Implementation-Version: 202101010101
+OpenIDE-Module-Specification-Version: 1.12
