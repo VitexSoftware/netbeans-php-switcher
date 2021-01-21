@@ -4,7 +4,7 @@
  * @author Vítězslav Dvořák <info@vitexsoftware.cz>
  * @copyright 2021 Vitex@hippy.cz (G)
  */
-package com.vitexsoftware.netbeans.modules.phpswitch;
+package com.vitexsoftware.netbeans.modules.php.versionswitch;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -27,7 +27,7 @@ import org.openide.util.Exceptions;
 @OnShowing
 public class PHPSwitch extends ModuleInstall implements Runnable {
 
-    public static final String CODENAME = "com.vitexsoftware.phpswitch";
+    public static final String CODENAME = "com.vitexsoftware.netbeans.modules.php.versionswitch";
 
     public static final Logger log = Logger.getLogger("PHPSwitch");
 

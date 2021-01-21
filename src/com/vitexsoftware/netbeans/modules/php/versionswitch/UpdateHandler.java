@@ -41,7 +41,7 @@
  * Version 2 license, then the option applies only if the new code is
  * made subject to such option by the copyright holder.
  */
-package com.vitexsoftware.netbeans.modules.phpswitch;
+package com.vitexsoftware.netbeans.modules.php.versionswitch;
 
 import java.io.IOException;
 import java.util.Collection;
@@ -381,7 +381,7 @@ public final class UpdateHandler {
     }
 
     private static boolean installNewModules() {
-        String s = NbBundle.getBundle("com.vitexsoftware.phpswitch.Bundle").getString("UpdateHandler.NewModules");
+        String s = NbBundle.getBundle("com.vitexsoftware.netbeans.modules.php.versionswitch.Bundle").getString("UpdateHandler.NewModules");
         return Boolean.parseBoolean(s);
     }
 }

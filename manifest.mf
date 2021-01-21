@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 AutoUpdate-Show-In-Client: true
-OpenIDE-Module: com.vitexsoftware.phpswitch
-OpenIDE-Module-Install: com/vitexsoftware/netbeans/modules/phpswitch/PHPSwitch.class
-OpenIDE-Module-Localizing-Bundle: com/vitexsoftware/netbeans/modules/phpswitch/Bundle.properties
-OpenIDE-Module-Layer: com/vitexsoftware/netbeans/modules/phpswitch/layer.xml
+OpenIDE-Module: com.vitexsoftware.netbeans.modules.php.versionswitch
+OpenIDE-Module-Install: com/vitexsoftware/netbeans/modules/php/versionswitch/PHPSwitch.class
+OpenIDE-Module-Localizing-Bundle: com/vitexsoftware/netbeans/modules/php/versionswitch/Bundle.properties
+OpenIDE-Module-Layer: com/vitexsoftware/netbeans/modules/php/versionswitch/layer.xml
 OpenIDE-Module-Implementation-Version: 202101010101

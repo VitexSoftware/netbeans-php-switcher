@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.vitexsoftware.netbeans.modules.phpswitch;
+package com.vitexsoftware.netbeans.modules.php.versionswitch;
 
 import java.awt.Component;
 import java.awt.event.ActionEvent;
@@ -29,7 +29,7 @@ import org.openide.util.NbBundle.Messages;
 import org.openide.util.actions.Presenter;
 
 @ActionID(category = "Window",
-        id = "com.vitexsoftware.phpswitch.ToolbarSwitch"
+        id = "com.vitexsoftware.netbeans.modules.php.versionswitch.ToolbarSwitch"
 )
 @ActionRegistration(
         iconBase = "com/vitexsoftware/phpswitch/phpx.png",
