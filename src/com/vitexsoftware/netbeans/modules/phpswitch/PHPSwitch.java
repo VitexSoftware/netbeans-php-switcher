@@ -4,7 +4,7 @@
  * @author Vítězslav Dvořák <info@vitexsoftware.cz>
  * @copyright 2021 Vitex@hippy.cz (G)
  */
-package com.vitexsoftware.phpswitch;
+package com.vitexsoftware.netbeans.modules.phpswitch;
 
 import java.io.BufferedReader;
 import java.io.IOException;

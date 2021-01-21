@@ -41,7 +41,7 @@
  * Version 2 license, then the option applies only if the new code is
  * made subject to such option by the copyright holder.
  */
-package com.vitexsoftware.phpswitch;
+package com.vitexsoftware.netbeans.modules.phpswitch;
 
 import java.io.IOException;
 import java.util.Collection;

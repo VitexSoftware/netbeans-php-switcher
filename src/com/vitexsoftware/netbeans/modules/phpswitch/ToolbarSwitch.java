@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.vitexsoftware.phpswitch;
+package com.vitexsoftware.netbeans.modules.phpswitch;
 
 import java.awt.Component;
 import java.awt.event.ActionEvent;
