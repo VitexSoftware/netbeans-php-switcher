@@ -65,6 +65,7 @@ import org.openide.util.Cancellable;
 import org.openide.util.NbBundle;
 
 /**
+ * Plugin update repository handler
  *
  * @author Jiri Rechtacek
  */
@@ -75,6 +76,9 @@ public final class UpdateHandler {
         return true;
     }
 
+    /**
+     * Update problems handler/notifier
+     */
     public static class UpdateHandlerException extends Exception {
 
         public UpdateHandlerException(String msg) {

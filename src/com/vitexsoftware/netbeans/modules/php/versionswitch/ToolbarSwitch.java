@@ -28,11 +28,17 @@ import org.openide.util.ImageUtilities;
 import org.openide.util.NbBundle.Messages;
 import org.openide.util.actions.Presenter;
 
+/**
+ * Switcher widget code
+ * 
+ * @author vitex
+ */
+
 @ActionID(category = "Window",
         id = "com.vitexsoftware.netbeans.modules.php.versionswitch.ToolbarSwitch"
 )
 @ActionRegistration(
-        iconBase = "com/vitexsoftware/phpswitch/phpx.png",
+        iconBase = "com/vitexsoftware/netbeans/modules/php/versionswitchphpx.png",
         displayName = "#CTL_ToolbarSwitch",
         lazy = false
 )
@@ -42,10 +48,6 @@ import org.openide.util.actions.Presenter;
     "PHPVersions.no_version=(no PHP Version)"
 })
 
-/**
- *
- * @author vitex
- */
 public class ToolbarSwitch extends AbstractAction implements Presenter.Toolbar {
 
     private JButton button;
@@ -79,7 +81,7 @@ public class ToolbarSwitch extends AbstractAction implements Presenter.Toolbar {
             }
 
             button = DropDownButtonFactory.createDropDownButton(
-                    ImageUtilities.loadImageIcon("com/vitexsoftware/phpswitch/php" + PHPSwitch.phpver + ".png", false),
+                    ImageUtilities.loadImageIcon("com/vitexsoftware/netbeans/modules/php/versionswitchphp" + PHPSwitch.phpver + ".png", false),
                     //new ImageIcon(new BufferedImage(16, 16, BufferedImage.TYPE_INT_ARGB)),
                     popup);
 
@@ -103,13 +105,18 @@ public class ToolbarSwitch extends AbstractAction implements Presenter.Toolbar {
 
     }
 
+    /**
+     * Try to set PHP version to given value
+     * 
+     * @param ver 
+     */
     private void setPhpVersion(String ver) {
         try {
             PHPSwitch.log.info("Try to set PHP version to " + ver);
             boolean switched = switchToVersion(ver);
             if (switched == true) {
                 StatusDisplayer.getDefault().setStatusText("Switched to PHP version '" + ver + "'");
-                button.setIcon(ImageUtilities.loadImageIcon("com/vitexsoftware/phpswitch/php" + ver + ".png", false));
+                button.setIcon(ImageUtilities.loadImageIcon("com/vitexsoftware/netbeans/modules/php/versionswitch/php" + ver + ".png", false));
             }
         } catch (Exception ex) {
             Exceptions.printStackTrace(ex);
@@ -117,9 +124,11 @@ public class ToolbarSwitch extends AbstractAction implements Presenter.Toolbar {
     }
 
     /**
-     *
-     * @param ver
-     * @return
+     * PHP Version switcher itself
+     * 
+     * @param ver "5.6" to "8.0"
+     * 
+     * @return is requested version active ?
      */
     public static boolean switchToVersion(String ver) {
         Process process;
