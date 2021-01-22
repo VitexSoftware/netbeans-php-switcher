@@ -52,7 +52,6 @@ public class PHPSwitch extends ModuleInstall implements Runnable {
         WindowManager.getDefault().invokeWhenUIReady(new Runnable() {
             @Override
             public void run() {
-                UpdateHandler.checkAndHandleUpdates();
             }
         });
 

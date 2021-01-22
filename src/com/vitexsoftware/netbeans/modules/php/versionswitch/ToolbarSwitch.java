@@ -81,7 +81,7 @@ public class ToolbarSwitch extends AbstractAction implements Presenter.Toolbar {
             }
 
             button = DropDownButtonFactory.createDropDownButton(
-                    ImageUtilities.loadImageIcon("com/vitexsoftware/netbeans/modules/php/versionswitchphp" + PHPSwitch.phpver + ".png", false),
+                    ImageUtilities.loadImageIcon("com/vitexsoftware/netbeans/modules/php/versionswitch/php" + PHPSwitch.phpver + ".png", false),
                     //new ImageIcon(new BufferedImage(16, 16, BufferedImage.TYPE_INT_ARGB)),
                     popup);
 
