@@ -38,15 +38,10 @@ import org.openide.util.actions.Presenter;
         id = "com.vitexsoftware.netbeans.modules.php.versionswitch.ToolbarSwitch"
 )
 @ActionRegistration(
-        iconBase = "com/vitexsoftware/netbeans/modules/php/versionswitchphpx.png",
         displayName = "#CTL_ToolbarSwitch",
         lazy = false
 )
 @ActionReference(path = "Toolbars/ToolbarPool", position = 2000)
-@Messages({
-    "CTL_ToolbarSwitch=PHP Version",
-    "PHPVersions.no_version=(no PHP Version)"
-})
 
 public class ToolbarSwitch extends AbstractAction implements Presenter.Toolbar {
 
@@ -58,10 +53,7 @@ public class ToolbarSwitch extends AbstractAction implements Presenter.Toolbar {
 //    }
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getActionCommand() == null) {
-            // show popup menu
-            button.mouseDown(null, 30, 30);
-        } else {
+        if (e.getActionCommand() != null) {
             ToolbarPool.getDefault().setConfiguration(e.getActionCommand());
             setPhpVersion(e.getActionCommand());
         }
@@ -73,7 +65,7 @@ public class ToolbarSwitch extends AbstractAction implements Presenter.Toolbar {
         if (button == null) {
             final JPopupMenu popup = new JPopupMenu();
 
-            List<String> phps = Arrays.asList("5.6", "7.0", "7.1", "7.2", "7.3", "7.4", "8.0");
+            List<String> phps = PHPSwitch.phpVersionsAvailble();
 
             for (String ver : phps) {
                 popup.add(ver).addActionListener(ToolbarSwitch.this);

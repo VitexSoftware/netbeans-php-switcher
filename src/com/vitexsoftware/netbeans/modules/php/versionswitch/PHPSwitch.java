@@ -7,8 +7,13 @@
 package com.vitexsoftware.netbeans.modules.php.versionswitch;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.ListIterator;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.regex.Matcher;
@@ -22,6 +27,7 @@ import org.openide.util.Exceptions;
 
 /**
  * Main module code
+ *
  * @author vitex
  */
 @OnShowing
@@ -82,6 +88,34 @@ public class PHPSwitch extends ModuleInstall implements Runnable {
             PHPSwitch.log.info("default PHP version " + ver + " detected");
         }
         return ver;
+    }
+
+    /**
+     * Search for PHP versions in system
+     *
+     * @return php versions found
+     */
+    public static List<String> phpVersionsAvailble() {
+        List<String> candidates = Arrays.asList("5.6", "7.0", "7.1", "7.2", "7.3", "7.4", "8.0");
+        List<String> versionsFound = new ArrayList<String>();
+
+        ListIterator<String> candidatesIterator = candidates.listIterator();
+
+        while (candidatesIterator.hasNext()) {
+            String version = candidatesIterator.next();
+            File f = new File("/usr/bin/php" + version);
+            if (f.exists() && !f.isDirectory() && f.isFile()) {
+                versionsFound.add(version);
+                PHPSwitch.log.info("PHP version " + version + " found");
+            }
+
+        }
+
+        if(versionsFound.isEmpty()){
+            PHPSwitch.errorDialog("No /usr/bin/phpX found");
+        }
+        
+        return  versionsFound;
     }
 
     /**

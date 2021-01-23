@@ -4,4 +4,4 @@ OpenIDE-Module: com.vitexsoftware.netbeans.modules.php.versionswitch
 OpenIDE-Module-Install: com/vitexsoftware/netbeans/modules/php/versionswitch/PHPSwitch.class
 OpenIDE-Module-Localizing-Bundle: com/vitexsoftware/netbeans/modules/php/versionswitch/Bundle.properties
 OpenIDE-Module-Layer: com/vitexsoftware/netbeans/modules/php/versionswitch/layer.xml
-OpenIDE-Module-Implementation-Version: 202101010101
+OpenIDE-Module-Specification-Version: 1.12
