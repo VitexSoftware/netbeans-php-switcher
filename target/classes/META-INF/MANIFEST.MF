@@ -1,13 +1,20 @@
-Manifest-Version: null
+Manifest-Version: 1.0
+OpenIDE-Module-Install: com/vitexsoftware/netbeans/modules/php/version
+ switch/Installer.class
+OpenIDE-Module-Layer: com/vitexsoftware/netbeans/modules/php/versionsw
+ itch/resources/layer.xml
+OpenIDE-Module-Localizing-Bundle: com/vitexsoftware/netbeans/modules/p
+ hp/versionswitch/Bundle.properties
+OpenIDE-Module-Recommends: org.netbeans.modules.php.editor
 OpenIDE-Module-Specification-Version: 0.1.1
 OpenIDE-Module-Implementation-Version: 0.1.1
-OpenIDE-Module-Build-Version: 202101211806
-OpenIDE-Module: com.vitexsoftware.netbeans.modules.color.codes.preview
+OpenIDE-Module-Build-Version: 202101230150
+OpenIDE-Module: com.vitexsoftware.netbeans.modules.php.versionswitch
 OpenIDE-Module-Public-Packages: com.vitexsoftware.netbeans.modules.php
- .versionswitch.api.*, com.vitexsoftware.netbeans.modules.php.versions
- witch.spi.*
+ .versionswitch.*
 OpenIDE-Module-Requires: org.openide.modules.ModuleFormat1
-OpenIDE-Module-Display-Category: com.vitexsoftware.netbeans.modules
+OpenIDE-Module-Display-Category: com.vitexsoftware.netbeans.modules.ph
+ p
 OpenIDE-Module-Name: PHP Version Switcher
 OpenIDE-Module-Short-Description: Choose active PHP Version as you nee
  d.

@@ -1,4 +1,3 @@
-
 Manifest-Version: 1.0
 OpenIDE-Module-Install: com/vitexsoftware/netbeans/modules/php/versionswitch/Installer.class
 OpenIDE-Module-Layer: com/vitexsoftware/netbeans/modules/php/versionswitch/resources/layer.xml

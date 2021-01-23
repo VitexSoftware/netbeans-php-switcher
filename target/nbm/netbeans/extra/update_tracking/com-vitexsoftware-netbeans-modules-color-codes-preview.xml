@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><module codename="com.vitexsoftware.netbeans.modules.color.codes.preview">
-    <module_version install_time="1611252416832" last="true" origin="installer" specification_version="0.1.1">
-        <file crc="1407266602" name="config/Modules/com-vitexsoftware-netbeans-modules-color-codes-preview.xml"/>
-        <file crc="660069991" name="modules/com-vitexsoftware-netbeans-modules-color-codes-preview.jar"/>
-        <file crc="4199948872" name="update_tracking/com-vitexsoftware-netbeans-modules-color-codes-preview.xml"/>
-    </module_version>
-</module>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.vitexsoftware.netbeans.modules</groupId>
-    <artifactId>netbeans-php-version-switcher</artifactId>
+    <groupId>com.vitexsoftware.netbeans.modules.php</groupId>
+    <artifactId>versionswitch</artifactId>
     <version>0.1.1</version>
     <packaging>nbm</packaging>
     <name>PHP Version Switcher</name>
@@ -48,17 +48,16 @@
             <plugin>
                 <groupId>org.apache.netbeans.utilities</groupId>
                 <artifactId>nbm-maven-plugin</artifactId>
-                <version>4.4</version>
+                <version>4.5</version>
                 <extensions>true</extensions>
                 <configuration>
-                    <codeNameBase>com.vitexsoftware.netbeans.modules.color.codes.preview</codeNameBase>
+                    <codeNameBase>com.vitexsoftware.netbeans.modules.php.versionswitch</codeNameBase>
                     <licenseName>Apache License, Version 2.0</licenseName>
                     <licenseFile>license.txt</licenseFile>
                     <author>Vítězslav Dvořák</author>
                     <homePageUrl>https://github.com/VitexSoftware/netbeans-php-switcher</homePageUrl>
                     <publicPackages>
-                        <publicPackage>com.vitexsoftware.netbeans.modules.php.versionswitch.api</publicPackage>
-                        <publicPackage>com.vitexsoftware.netbeans.modules.php.versionswitch.spi</publicPackage>
+                        <publicPackage>com.vitexsoftware.netbeans.modules.php.versionswitch</publicPackage>
                     </publicPackages>
                 </configuration>
             </plugin>
@@ -74,7 +73,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
-                <version>3.2.0</version>
+                <version>3.1.0</version>
                 <configuration>
                     <archive>
                         <manifestFile>${project.build.outputDirectory}/META-INF/MANIFEST.MF</manifestFile>
@@ -85,20 +84,6 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.15</version>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-gpg-plugin</artifactId>
-                <version>1.6</version>
-                <executions>
-                    <execution>
-                        <id>sign-artifacts</id>
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>sign</goal>
-                        </goals>
-                    </execution>
-                </executions>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

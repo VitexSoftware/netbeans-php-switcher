@@ -6,7 +6,7 @@
     <description>Builds, tests, and runs the project com.vitexsoftware.netbeans.modules.php.versionswitch.</description>
     <import file="nbproject/build-impl.xml"/>
 
-    <!-- target name="dist" depends="jar">
+    <target name="dist" depends="jar">
         <javadoc sourcepath="${src}" destdir="${dist}/javadoc" />
         <jar jarfile="${javadoc-jar}">
             <fileset dir="${dist}/javadoc" />
@@ -15,5 +15,8 @@
         <jar jarfile="${sources-jar}">
             <fileset dir="${src}" />
         </jar>
-    </target -->
+    </target>
+    
+    
+      
 </project>
