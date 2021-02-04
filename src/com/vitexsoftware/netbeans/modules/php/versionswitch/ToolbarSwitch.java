@@ -1,7 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * PHPSwitch ToolbarButton class
+ *
+ * @author Vítězslav Dvořák <info@vitexsoftware.cz>
+ * @copyright 2021 Vitex@hippy.cz (G)
  */
 package com.vitexsoftware.netbeans.modules.php.versionswitch;
 

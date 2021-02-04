@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
-OpenIDE-Module-Install: com/vitexsoftware/netbeans/modules/php/versionswitch/Installer.class
+OpenIDE-Module-Install: com/vitexsoftware/netbeans/modules/php/versionswitch/PHPSwitch.class
 OpenIDE-Module-Layer: com/vitexsoftware/netbeans/modules/php/versionswitch/resources/layer.xml
 OpenIDE-Module-Localizing-Bundle: com/vitexsoftware/netbeans/modules/php/versionswitch/Bundle.properties
 OpenIDE-Module-Recommends: org.netbeans.modules.php.editor
