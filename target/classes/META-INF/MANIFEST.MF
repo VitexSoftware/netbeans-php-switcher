@@ -1,14 +1,12 @@
 Manifest-Version: 1.0
-OpenIDE-Module-Install: com/vitexsoftware/netbeans/modules/php/version
- switch/Installer.class
 OpenIDE-Module-Layer: com/vitexsoftware/netbeans/modules/php/versionsw
  itch/resources/layer.xml
 OpenIDE-Module-Localizing-Bundle: com/vitexsoftware/netbeans/modules/p
  hp/versionswitch/Bundle.properties
 OpenIDE-Module-Recommends: org.netbeans.modules.php.editor
-OpenIDE-Module-Specification-Version: 0.1.1
-OpenIDE-Module-Implementation-Version: 0.1.1
-OpenIDE-Module-Build-Version: 202101230150
+OpenIDE-Module-Specification-Version: 0.1.2
+OpenIDE-Module-Implementation-Version: 0.1.2
+OpenIDE-Module-Build-Version: 202102041846
 OpenIDE-Module: com.vitexsoftware.netbeans.modules.php.versionswitch
 OpenIDE-Module-Public-Packages: com.vitexsoftware.netbeans.modules.php
  .versionswitch.*
