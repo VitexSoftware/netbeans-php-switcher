@@ -13,7 +13,6 @@ import java.beans.PropertyChangeListener;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Arrays;
 import java.util.List;
 import javax.swing.AbstractAction;
 import javax.swing.JButton;
@@ -26,7 +25,6 @@ import org.openide.awt.StatusDisplayer;
 import org.openide.awt.ToolbarPool;
 import org.openide.util.Exceptions;
 import org.openide.util.ImageUtilities;
-import org.openide.util.NbBundle.Messages;
 import org.openide.util.actions.Presenter;
 
 /**
@@ -119,15 +117,15 @@ public class ToolbarSwitch extends AbstractAction implements Presenter.Toolbar {
     /**
      * PHP Version switcher itself
      * 
-     * @param ver "5.6" to "8.0"
+     * @param ver "5.6" to "8.1"
      * 
      * @return is requested version active ?
      */
     public static boolean switchToVersion(String ver) {
         Process process;
-        String line = null;
+        String line;
         try {
-            process = Runtime.getRuntime().exec("usephp-" + ver);
+            process = Runtime.getRuntime().exec("usephp " + ver);
             BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
             while ((line = reader.readLine()) != null) {
                 System.out.println(line);

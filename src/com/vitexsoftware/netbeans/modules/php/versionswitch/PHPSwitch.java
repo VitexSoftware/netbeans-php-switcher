@@ -66,7 +66,7 @@ public class PHPSwitch extends ModuleInstall implements Runnable {
     /**
      * Obtain current PHP version
      *
-     * @return from "5.6" to "8.0"
+     * @return from "5.6" to "8.1"
      */
     public static String currentPhpVersion() {
         Process process;
@@ -96,7 +96,7 @@ public class PHPSwitch extends ModuleInstall implements Runnable {
      * @return php versions found
      */
     public static List<String> phpVersionsAvailble() {
-        List<String> candidates = Arrays.asList("5.6", "7.0", "7.1", "7.2", "7.3", "7.4", "8.0");
+        List<String> candidates = Arrays.asList("5.6", "7.0", "7.1", "7.2", "7.3", "7.4", "8.0", "8.1");
         List<String> versionsFound = new ArrayList<String>();
 
         ListIterator<String> candidatesIterator = candidates.listIterator();
@@ -106,7 +106,7 @@ public class PHPSwitch extends ModuleInstall implements Runnable {
             File f = new File("/usr/bin/php" + version);
             if (f.exists() && !f.isDirectory() && f.isFile()) {
                 versionsFound.add(version);
-                PHPSwitch.log.info("PHP version " + version + " found");
+                PHPSwitch.log.log(Level.INFO, "PHP version {0} found", version);
             }
 
         }
