@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.vitexsoftware.netbeans.modules.php</groupId>
     <artifactId>versionswitch</artifactId>
-    <version>0.1.2</version>
+    <version>0.1.3</version>
     <packaging>nbm</packaging>
     <name>PHP Version Switcher</name>
     <url>https://github.com/VitexSoftware/netbeans-php-switcher</url>
@@ -12,6 +12,8 @@
             <id>vitexsoftware</id>
             <name>Vítězslav Dvořák</name>
             <url>https://github.com/vitexsoftware</url>
+            <organization>VitexSoftware</organization>
+            <organizationUrl>http://vitexsoftware.cz/</organizationUrl>
         </developer>
     </developers>
     <scm>
@@ -37,7 +39,7 @@
             <plugin>
                 <groupId>org.sonatype.plugins</groupId>
                 <artifactId>nexus-staging-maven-plugin</artifactId>
-                <version>1.6.7</version>
+                <version>1.6.8</version>
                 <extensions>true</extensions>
                 <configuration>
                     <serverId>ossrh</serverId>
@@ -88,7 +90,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-gpg-plugin</artifactId>
-                <version>1.5</version>
+                <version>1.6</version>
                 <executions>
                     <execution>
                         <id>sign-artifacts</id>
@@ -99,8 +101,38 @@
                     </execution>
                 </executions>
             </plugin>            
+            
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>3.2.1</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>            
+            
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.2.0</version>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>            
+            
         </plugins>
     </build>
+    
     <repositories>
         <repository>
             <id>netbeans</id>
@@ -111,12 +143,18 @@
             </snapshots>
         </repository>
     </repositories>
+ 
     <distributionManagement>
         <snapshotRepository>
             <id>ossrh</id>
             <url>https://oss.sonatype.org/content/repositories/snapshots</url>
         </snapshotRepository>
+        <repository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
     </distributionManagement>    
+    
     <dependencies>
         <dependency>
             <groupId>org.netbeans.api</groupId>
@@ -209,6 +247,6 @@
     </dependencies>
     <description>
         Choose active PHP Version as you need. 
-        Switchin between PHP 5.6 to PHP 8.0 supported. 
+        Switchin between PHP 5.6 to PHP 8.1 supported. 
     </description>
 </project>
