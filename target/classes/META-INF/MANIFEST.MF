@@ -1,12 +1,7 @@
-Manifest-Version: 1.0
-OpenIDE-Module-Layer: com/vitexsoftware/netbeans/modules/php/versionsw
- itch/resources/layer.xml
-OpenIDE-Module-Localizing-Bundle: com/vitexsoftware/netbeans/modules/p
- hp/versionswitch/Bundle.properties
-OpenIDE-Module-Recommends: org.netbeans.modules.php.editor
-OpenIDE-Module-Specification-Version: 0.1.2
-OpenIDE-Module-Implementation-Version: 0.1.2
-OpenIDE-Module-Build-Version: 202102041846
+Manifest-Version: null
+OpenIDE-Module-Specification-Version: 0.1.3
+OpenIDE-Module-Implementation-Version: 0.1.3
+OpenIDE-Module-Build-Version: 202110112124
 OpenIDE-Module: com.vitexsoftware.netbeans.modules.php.versionswitch
 OpenIDE-Module-Public-Packages: com.vitexsoftware.netbeans.modules.php
  .versionswitch.*
@@ -17,7 +12,7 @@ OpenIDE-Module-Name: PHP Version Switcher
 OpenIDE-Module-Short-Description: Choose active PHP Version as you nee
  d.
 OpenIDE-Module-Long-Description: Choose active PHP Version as you need
- . Switchin between PHP 5.6 to PHP 8.0 supported.
+ . Switchin between PHP 5.6 to PHP 8.1 supported.
 OpenIDE-Module-Module-Dependencies: org.netbeans.api.annotations.commo
  n/1 > 1.31.1, org.netbeans.modules.editor.lib2/1 > 2.22.1.55.3, org.n
  etbeans.modules.editor.lib/3 > 4.11.1.23.3.55, org.openide.util > 9.1
