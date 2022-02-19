@@ -2,7 +2,7 @@
  * PHPSwitch ToolbarButton class
  *
  * @author Vítězslav Dvořák <info@vitexsoftware.cz>
- * @copyright 2021 Vitex@hippy.cz (G)
+ * @copyright 2021-2022 Vitex@hippy.cz (G)
  */
 package com.vitexsoftware.netbeans.modules.php.versionswitch;
 
@@ -11,8 +11,14 @@ import java.awt.event.ActionEvent;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import javax.swing.AbstractAction;
 import javax.swing.JButton;
@@ -21,6 +27,7 @@ import org.openide.awt.ActionID;
 import org.openide.awt.ActionReference;
 import org.openide.awt.ActionRegistration;
 import org.openide.awt.DropDownButtonFactory;
+import org.openide.awt.HtmlBrowser.URLDisplayer;
 import org.openide.awt.StatusDisplayer;
 import org.openide.awt.ToolbarPool;
 import org.openide.util.Exceptions;
@@ -29,14 +36,14 @@ import org.openide.util.actions.Presenter;
 
 /**
  * Switcher widget code
- * 
+ *
  * @author vitex
  */
-
 @ActionID(category = "Window",
         id = "com.vitexsoftware.netbeans.modules.php.versionswitch.ToolbarSwitch"
 )
 @ActionRegistration(
+        //        iconBase = "com/vitexsoftware/netbeans/modules/php/versionswitch/phpx.png",
         displayName = "#CTL_ToolbarSwitch",
         lazy = false
 )
@@ -55,8 +62,19 @@ public class ToolbarSwitch extends AbstractAction implements Presenter.Toolbar {
         if (e.getActionCommand() != null) {
             ToolbarPool.getDefault().setConfiguration(e.getActionCommand());
             setPhpVersion(e.getActionCommand());
+        } else {
+            String phpInfoFile = null;
+            try {
+                phpInfoFile = generatePhpInfo();
+            } catch (InterruptedException | IOException ex) {
+                Exceptions.printStackTrace(ex);
+            }
+            try {
+                URLDisplayer.getDefault().showURL(new URL(phpInfoFile));
+            } catch (MalformedURLException ex) {
+                Exceptions.printStackTrace(ex);
+            }
         }
-
     }
 
     @Override
@@ -98,8 +116,8 @@ public class ToolbarSwitch extends AbstractAction implements Presenter.Toolbar {
 
     /**
      * Try to set PHP version to given value
-     * 
-     * @param ver 
+     *
+     * @param ver
      */
     private void setPhpVersion(String ver) {
         try {
@@ -115,10 +133,53 @@ public class ToolbarSwitch extends AbstractAction implements Presenter.Toolbar {
     }
 
     /**
+     * File with phpinfo
+     *
+     * @return
+     */
+    private String generatePhpInfo() throws InterruptedException, IOException {
+        Process process;
+        String phpInfoPath = System.getProperty("java.io.tmpdir") + "/" + new SimpleDateFormat("yyyyMMddHHmmss").format(new Date()) + "phpinfo.html";
+        String phpInfo = "";
+        
+        Runtime rt = Runtime.getRuntime();
+        Process proc = rt.exec("php-cgi -f " + savePhpInfo());
+
+        BufferedReader stdInput = new BufferedReader(new InputStreamReader(proc.getInputStream()));
+
+        BufferedReader stdError = new BufferedReader(new InputStreamReader(proc.getErrorStream()));
+
+// Read the output from the command
+        System.out.println("Here is the standard output of the command:\n");
+        String s = null;
+        while ((s = stdInput.readLine()) != null) {
+            phpInfo = phpInfo + s;
+        }
+
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(phpInfoPath))) {
+            writer.write(phpInfo);
+            writer.close();
+        }
+        
+        System.out.println("PHPinfo saved to: " + phpInfoPath);
+        return "file://" + phpInfoPath;
+    }
+
+    private String savePhpInfo() throws IOException {
+        String phpInfoCode = System.getProperty("java.io.tmpdir") + "/phpinfo.php";
+        String code = "<?php phpinfo();";
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(phpInfoCode))) {
+            writer.write(code);
+            writer.close();
+        }
+        return phpInfoCode;
+    }
+
+    /**
      * PHP Version switcher itself
-     * 
+     *
      * @param ver "5.6" to "8.1"
-     * 
+     *
      * @return is requested version active ?
      */
     public static boolean switchToVersion(String ver) {

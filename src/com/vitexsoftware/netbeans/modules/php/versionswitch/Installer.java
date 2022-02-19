@@ -2,7 +2,7 @@
  * PHPSwitch module Installer
  *
  * @author Vítězslav Dvořák <info@vitexsoftware.cz>
- * @copyright 2021 Vitex@hippy.cz (G)
+ * @copyright 2021-2022 Vitex@hippy.cz (G)
  */
 package com.vitexsoftware.netbeans.modules.php.versionswitch;
 

@@ -49,6 +49,11 @@ public class PHPSwitch extends ModuleInstall implements Runnable {
     public static final String phpver = PHPSwitch.currentPhpVersion();
 
     /**
+     * System recognization
+     */
+    boolean isWindows = System.getProperty("os.name").toLowerCase().startsWith("windows");
+    
+    /**
      * Introduce plugin into live
      */
     @Override

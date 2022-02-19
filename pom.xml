@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.vitexsoftware.netbeans.modules.php</groupId>
     <artifactId>versionswitch</artifactId>
-    <version>0.1.3</version>
+    <version>0.1.4</version>
     <packaging>nbm</packaging>
     <name>PHP Version Switcher</name>
     <url>https://github.com/VitexSoftware/netbeans-php-switcher</url>
